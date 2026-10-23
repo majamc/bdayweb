@@ -1,5 +1,5 @@
 html {
-  font-size: 16px; /* Reset to standard base size for proper mobile scaling */
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
@@ -17,7 +17,7 @@ body {
   width: 100vw;
   height: 100vh;
   height: 100dvh;
-  background-color: #000;
+  background-color: #000; /* Fallback background in case image proportions leave letterboxes */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,10 +25,12 @@ body {
 }
 
 .homepage-landing img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Ensures the whole image fits cleanly without cropping or scaling weirdly */
-  object-position: center;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .swipe-indicator {
