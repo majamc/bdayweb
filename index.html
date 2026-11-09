@@ -3,21 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
+    <title>Happy Birthday</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/happy-birthday.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=BBH+Sans+Bogle&family=Caprasimo&family=Coda:wght@400;800&family=Diplomata+SC&family=Figtree:ital,wght@0,300..900;1,300..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap" rel="stylesheet">
-
-    <title>Happy Birthday</title>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&family=Diplomata+SC&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Homepage Landing Screen -->
+
     <section class="homepage-landing">
-        <img src="assets/homepage.png" alt="Homepage Landing">
-        <div class="swipe-indicator">Swipe down to celebrate!</div>
+        <img id="homepage-img" src="assets/homepage.png" alt="Homepage Landing">
+        <button id="gift-btn" class="gift-btn">Click here!</button>
     </section>
+
+    <div id="gift-modal" class="gift-modal hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close-btn">×</span>
+            <h2>Happy Birthday!</h2>
+            <div class="media-placeholder">
+                <video class="gift-media" controls playsinline>
+                    <source src="assets/vidd.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
 
     <section class="bday-bilboard">
         <div class="wrapper">
@@ -32,23 +45,44 @@
         </div>
     </section>
 
-    <section class="video-background">
-        <canvas id="confetti"></canvas>
-        <video autoplay loop muted playsinline>
-            <source src="assets/video.mp4" type="video/mp4">
-        </video>
-        <div class="overlay1"></div>
-        <div class="content">
-            <div>
-                <h1 class="happybday">Happy<br>Birthday<br>baby!</h1>
+    <section class="player">
+        <h1 class="headerr">Some of your favorites!</h1>
+        <div class="player-top">
+            <div class="left-column">
+                <div class="track-art"></div>
+                <div class="text-info">
+                    <div class="now-playing">PLAYING x OF y</div>
+                    <div class="track-name">Track Name</div>
+                    <div class="track-artist">Track Artist</div>
+                </div>
             </div>
-            <div class="clickdiv">
-                <h4 class="clickhere">Click here to celebrate!</h4>
-                <button class="btn-clickme" id="btn-clickme">Click Me</button>
+
+            <div class="buttons">
+                <div class="prev-track" onclick="prevTrack()" title="Previous Track">
+                    <i class="fa fa-step-backward fa-2x"></i>
+                </div>
+                <div class="playpause-track" onclick="playpauseTrack()" title="Play / Pause">
+                    <i class="fa fa-play-circle fa-5x"></i>
+                </div>
+                <div class="next-track" onclick="nextTrack()" title="Next Track">
+                    <i class="fa fa-step-forward fa-2x"></i>
+                </div>
             </div>
         </div>
+
+        <div class="slider_container">
+            <div class="current-time">00:00</div>
+            <input type="range" min="0" max="100" value="0" class="seek_slider" onchange="seekTo()">
+            <div class="total-duration">00:00</div>
+        </div>
+
+        <div class="slider_container">
+            <i class="fa fa-volume-down"></i>
+            <input type="range" min="0" max="100" value="100" class="volume_slider" onchange="setVolume()">
+            <i class="fa fa-volume-up"></i>
+        </div>
     </section>
-    
+
     <section class="bday-bilboard">
         <div class="wrapper">
             <div class="item item1">Happy Birthday!</div>
@@ -64,71 +98,17 @@
 
     <section class="section2">
         <div class="image">
-            <img src="assets/cake.gif" alt="">
+            <img id="hat-gif" src="assets/hat1.png" alt="Birthday Cake">
         </div>
         <div class="wishes">
-            <h1>Happy 21th Birthday Willy</h1>
-            <p>You truly are the best boyfriend I could ever ask for Willy. I truly can't believe we've been together for 5 years already and I got to watch you grow up from the best seat there is, right by your side. I'm so proud of the person you became Willy and I can't wait to watch you grow even more and achieve your goals. I truly love you so much Willy and I'm truly thankful for all the time we spent together, you truly make me the happiest I've ever been and I hope I make you happy as well. I will always be by your side baby, you can always rely on me because I'm here to stay. I can't wait to move in with you and kiss you goodmorning every single day (no exceptions -_-). I promise I will never take us for granted Willy and I will work hard every single day for you to give you anything you will ever dream of.<br>Again, Happy Birthday Baby!</p>
-        </div>
-    </section>
-
-    <section class="section3">
-        <h1>Photobooth</h1>
-
-        <div id="div1" class="photobooth-div visible" >
-            <div class="images">
-                <img class="photobooth" src="assets/photobooth.jpg" alt="">
-                <img class="photo-picture" src="assets/photo-picture.jpg" alt="">
+            <h1>Happy 22nd Birthday Willy!!! ₍₍⚞(˶>ᗜ<˶)⚟⁾⁾</h1>
+            <p>It's truly crazy how much I watched you grow up over the years. When we met you were just 15 and today you're turning 22 you're working towards your goals, you work out and have your life figured out. I'm truly thankful I got to be by your side for so long and experience so many things with you. I just can't wait to take you to Japan out of my money and just pay you back for everything you did for me and one day buy you your dream car.</p>
+            <p>I truly wish for you all of the best things in the world, and everything you dream of. You're extremely hard working so I know you will achieve all of your goals and dreams. I know you will be able to own crazy cool cars, own houses or apartments wherever you would want to and have so much money you won't ever have to worry about it anymore.</p>
+            <p>I truly can't wait for your next birthday since we would already live together and I would be able to properly celebrate your birthday with you, in general I can't wait to move in with you and do my best to make your day to day life happier and easier.</p>
+            <p>You are truly the best boyfriend I could ever ask for. I truly love you from the bottom of my heart</p>
+            <div style="margin-top: 15px;">
+                <button id="btn-clickme" class="photobooth-btn">Celebrate! ◝(ᵔᗜᵔ)◜</button>
             </div>
-            <div class="text-photobooth">
-                <p>To create a memory from this special day!<br> Feel free to make as many as you want</p>
-                <p>To retake just reload the website</p>
-                <button id="photobooth-btn" class="photobooth-btn">Click here</button>
-            </div>
-        </div>
-
-        <div id="div2" class="container hidden">
-            <div id="photo-strip">
-                <div class="video-container">
-                    <video id="video" autoplay></video>
-                    <div class="overlay" id="overlay1"></div>
-                </div>
-                <div class="video-container">
-                    <video id="video2" autoplay></video>
-                    <div class="overlay" id="overlay2"></div>
-                </div>
-
-                <img src="assets/dog.png" alt="Top Dog Sticker" class="dog-sticker bottom-dog">
-                <img src="assets/pug.png" alt="Top Dog Sticker" class="dog-sticker top-dog">
-
-                <div class="message">
-                    <h2 id="text">happy birthday baby!</h2>
-                    <h3 id="text">11/11/2025</h3>
-                </div>
-            </div>
-
-            <div id="controls" class="controls">
-                <button id="capture-btn">Capture</button>
-                <button id="download-btn" style="display:none;">Download</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="section4">
-        <div class="parent">
-            <div class="wish div1">What I wish for you</div>
-            <div class="wish div2">Making all your dreams come true</div>
-            <div class="wish div3">A lot of amazing adventures</div>
-            <div class="wish div4">Going to Japan again multiple times</div>
-            <div class="wish div5">Achiving financial success</div>
-            <div class="wish div6">Being happy everyday</div>
-            <div class="wish div7">Success in music</div>
-            <div class="wish div8">A lot of new cool clothes</div>
-            <div class="wish div9">A lot of resting because you deserve it</div>
-            <div class="wish div10">Being healthy and never worrying about health</div>
-            <div class="wish div11">Being able to ride all rollercoasters you want</div>
-            <div class="wish div12">Getting your dream car in the future</div>
-            <div class="wish div13">Having someone always there for you</div>
         </div>
     </section>
 
